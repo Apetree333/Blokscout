@@ -8,6 +8,8 @@
 
 ### Chore
 
+- [#8851](https://github.com/blockscout/blockscout/pull/8851) - Fix dialyzer and add TypedEctoSchema
+
 <details>
   <summary>Dependencies version bumps</summary>
 
