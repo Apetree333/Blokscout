@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#9300](https://github.com/blockscout/blockscout/pull/9300) - Fix read contract bug
+
 ### Chore
 
 <details>
