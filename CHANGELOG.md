@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#9305](https://github.com/blockscout/blockscout/pull/9305) - Add effective gas price calculation as fallback
+
 ### Chore
 
 <details>
