@@ -17,6 +17,7 @@ defmodule Indexer.Block.Fetcher do
   alias Explorer.Chain.Cache.{Accounts, BlockNumber, Transactions, Uncles}
   alias Indexer.Block.Fetcher.Receipts
   alias Indexer.Fetcher.TokenInstance.Realtime, as: TokenInstanceRealtime
+  alias Indexer.Fetcher.Zkevm.BridgeL1Tokens, as: ZkevmBridgeL1Tokens
 
   alias Indexer.Fetcher.{
     BlockReward,
@@ -400,6 +401,12 @@ defmodule Indexer.Block.Fetcher do
   end
 
   def async_import_replaced_transactions(_), do: :ok
+
+  def async_import_zkevm_bridge_l1_tokens(%{zkevm_bridge_operations: operations}) do
+    ZkevmBridgeL1Tokens.async_fetch(operations)
+  end
+
+  def async_import_zkevm_bridge_l1_tokens(_), do: :ok
 
   defp block_reward_errors_to_block_numbers(block_reward_errors) when is_list(block_reward_errors) do
     Enum.map(block_reward_errors, &block_reward_error_to_block_number/1)
