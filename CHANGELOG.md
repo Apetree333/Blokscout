@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#9315](https://github.com/blockscout/blockscout/pull/9315) - Fix manual uncle reward calculation
+
 ### Chore
 
 <details>
