@@ -955,7 +955,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block: tx.block,
             block_number: tx.block_number,
             from_address: address,
-            token_contract_address: erc_20_token.contract_address
+            token_contract_address: erc_20_token.contract_address,
+            token_type: "ERC-20"
           )
         end
 
@@ -971,7 +972,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block_number: tx.block_number,
             from_address: address,
             token_contract_address: erc_721_token.contract_address,
-            token_ids: [x]
+            token_ids: [x],
+            token_type: "ERC-721"
           )
         end
 
@@ -987,7 +989,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block_number: tx.block_number,
             from_address: address,
             token_contract_address: erc_1155_token.contract_address,
-            token_ids: [x]
+            token_ids: [x],
+            token_type: "ERC-1155"
           )
         end
 
@@ -1080,7 +1083,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block: tx.block,
             block_number: tx.block_number,
             from_address: address,
-            token_contract_address: erc_20_token.contract_address
+            token_contract_address: erc_20_token.contract_address,
+            token_type: "ERC-20"
           )
         end
 
@@ -1096,7 +1100,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block_number: tx.block_number,
             to_address: address,
             token_contract_address: erc_721_token.contract_address,
-            token_ids: [x]
+            token_ids: [x],
+            token_type: "ERC-721"
           )
         end
 
@@ -1160,6 +1165,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block_number: tx.block_number,
             token_contract_address: token.contract_address,
             token_ids: Enum.map(0..50, fn _x -> id end),
+            token_type: "ERC-1155",
             amounts: Enum.map(0..50, fn x -> x end)
           )
         end
@@ -1194,7 +1200,8 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
             block: tx.block,
             block_number: tx.block_number,
             token_contract_address: token.contract_address,
-            token_ids: [i]
+            token_ids: [i],
+            token_type: "ERC-721"
           )
         end
 
@@ -1222,6 +1229,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx.block_number,
           token_contract_address: token.contract_address,
           token_ids: Enum.map(0..50, fn x -> x end),
+          token_type: "ERC-1155",
           amounts: Enum.map(0..50, fn x -> x end)
         )
 
@@ -1264,6 +1272,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx_1.block_number,
           token_contract_address: token.contract_address,
           token_ids: Enum.map(0..24, fn x -> x end),
+          token_type: "ERC-1155",
           amounts: Enum.map(0..24, fn x -> x end)
         )
 
@@ -1282,6 +1291,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx_2.block_number,
           token_contract_address: token.contract_address,
           token_ids: Enum.map(25..49, fn x -> x end),
+          token_type: "ERC-1155",
           amounts: Enum.map(25..49, fn x -> x end)
         )
 
@@ -1298,6 +1308,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx_2.block_number,
           token_contract_address: token.contract_address,
           token_ids: [50],
+          token_type: "ERC-1155",
           amounts: [50]
         )
 
@@ -1326,6 +1337,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx_1.block_number,
           token_contract_address: token.contract_address,
           token_ids: Enum.map(0..24, fn x -> x end),
+          token_type: "ERC-1155",
           amounts: Enum.map(0..24, fn x -> x end)
         )
 
@@ -1344,6 +1356,7 @@ defmodule BlockScoutWeb.API.V2.AddressControllerTest do
           block_number: tx_2.block_number,
           token_contract_address: token.contract_address,
           token_ids: Enum.map(25..50, fn x -> x end),
+          token_type: "ERC-1155",
           amounts: Enum.map(25..50, fn x -> x end)
         )
 
