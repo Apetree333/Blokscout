@@ -6,6 +6,8 @@
 
 ### Fixes
 
+- [#9346](https://github.com/blockscout/blockscout/pull/9346) - Process integer balance in genesis.json
+
 ### Chore
 
 <details>
