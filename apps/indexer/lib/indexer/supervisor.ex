@@ -41,6 +41,7 @@ defmodule Indexer.Supervisor do
     TokenUpdater,
     TransactionAction,
     UncleBlock,
+    ValidatorStability,
     Withdrawal
   }
 
@@ -183,7 +184,10 @@ defmodule Indexer.Supervisor do
       ]
       |> List.flatten()
 
-    all_fetchers = maybe_add_bridged_tokens_fetchers(basic_fetchers)
+    all_fetchers =
+      basic_fetchers
+      |> maybe_add_bridged_tokens_fetchers()
+      |> add_chain_type_dependent_fetchers()
 
     Supervisor.init(
       all_fetchers,
@@ -205,6 +209,16 @@ defmodule Indexer.Supervisor do
       [{SetAmbBridgedMetadataForTokens, [[], []]} | extended_fetchers]
     else
       extended_fetchers
+    end
+  end
+
+  defp add_chain_type_dependent_fetchers(fetchers) do
+    case Application.get_env(:explorer, :chain_type) do
+      "stability" ->
+        [{ValidatorStability, []} | fetchers]
+
+      _ ->
+        fetchers
     end
   end
 

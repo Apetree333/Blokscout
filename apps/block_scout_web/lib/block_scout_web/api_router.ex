@@ -336,6 +336,10 @@ defmodule BlockScoutWeb.ApiRouter do
         get("/operations", V2.Proxy.AccountAbstractionController, :operations)
       end
     end
+
+    scope "/validators" do
+      get("/stability", V2.ValidatorController, :stability_validators_list)
+    end
   end
 
   scope "/v1", as: :api_v1 do

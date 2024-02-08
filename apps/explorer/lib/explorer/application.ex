@@ -143,7 +143,8 @@ defmodule Explorer.Application do
         Explorer.Repo.RSK,
         Explorer.Repo.Shibarium,
         Explorer.Repo.Suave,
-        Explorer.Repo.BridgedTokens
+        Explorer.Repo.BridgedTokens,
+        Explorer.Repo.Stability
       ]
     else
       []

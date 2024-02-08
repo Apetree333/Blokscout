@@ -41,6 +41,7 @@ defmodule Explorer.DataCase do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Explorer.Repo.Shibarium)
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Explorer.Repo.Suave)
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Explorer.Repo.BridgedTokens)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Explorer.Repo.Stability)
 
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Explorer.Repo, {:shared, self()})
@@ -51,6 +52,7 @@ defmodule Explorer.DataCase do
       Ecto.Adapters.SQL.Sandbox.mode(Explorer.Repo.Shibarium, {:shared, self()})
       Ecto.Adapters.SQL.Sandbox.mode(Explorer.Repo.Suave, {:shared, self()})
       Ecto.Adapters.SQL.Sandbox.mode(Explorer.Repo.BridgedTokens, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Explorer.Repo.Stability, {:shared, self()})
     end
 
     Supervisor.terminate_child(Explorer.Supervisor, Explorer.Chain.Cache.BlockNumber.child_id())
